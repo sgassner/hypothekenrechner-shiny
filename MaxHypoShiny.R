@@ -1,4 +1,4 @@
-# Installieren und Laden der erforderlichen Pakete
+# Packages laden
 library(shiny)
 library(ggplot2)
 
@@ -30,6 +30,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {
   
   observeEvent(input$calcButton, {
+    
     # Konstanten aus Inputs
     bb <- input$bbInput
     b1 <- input$b1Input
@@ -62,7 +63,7 @@ server <- function(input, output, session) {
     # Tragbarkeit
     t <- (ix + a + nk) / e
     
-    # DataFrame erstellen
+    # Data Frame erstellen zur Speicherung der Werte
     df <- data.frame(Hypothek = h, Tragbarkeit = t)
     
     # Finde nächsten Hypothekarwert zu maximal möglicher Tragbarkeit
