@@ -40,23 +40,23 @@ server <- function(input, output, session) {
     i <- input$iInput
     maxt <- input$maxtInput
     
-    # Loop-Definition
+    # Loop Start und Stop definieren
     low <- 0
     high <- bb*b2
     
     # Vektor für Hypothekenwerte
     h <- low:high
     
-    # Residualwerte
+    # Belehnung
     b <- h/bb
     
-    # Zinsen
+    # Zinsen (CHF)
     ix <- i * h
     
-    # Amortisation
+    # Amortisation (CHF)
     a <- pmax((((b - b1) * bb) / y), 0)
     
-    # Nebenkosten
+    # Nebenkosten (CHF)
     nk <- n * bb
     
     # Tragbarkeit
@@ -65,7 +65,7 @@ server <- function(input, output, session) {
     # DataFrame erstellen
     df <- data.frame(Hypothek = h, Tragbarkeit = t)
     
-    # Index des kleinsten absoluten Unterschieds zwischen Tragbarkeit und 0.37 finden
+    # Finde nächsten Hypothekarwert zu maximal möglicher Tragbarkeit
     index <- which.min(abs(df$Tragbarkeit - maxt))
     
     hypo_max <- df$Hypothek[index]
@@ -81,7 +81,7 @@ server <- function(input, output, session) {
         theme(text = element_text(size = 16))
     })
     
-    # Maximale Hypothek
+    # Maximale Hypothek mit maximal möglicher Tragbarkeit als Output definieren
     output$maxHypothek <- renderTable({
       df[index, ]
     })
