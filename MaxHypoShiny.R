@@ -62,7 +62,7 @@ server <- function(input, output, session) {
     i <- input$iInput
     maxt <- input$maxtInput
     
-    # Loop Start und Stop definieren
+    # High & Low des Vektors definieren
     low <- 0
     high <- bb*b2
     
