@@ -52,7 +52,7 @@ server <- function(input, output, session) {
   
   observeEvent(input$calcButton, {
     
-    # Konstanten aus Inputs
+    # Konstanten aus Inputs (1. Unterseite)
     bb <- input$bbInput
     b1 <- input$b1Input
     b2 <- input$b2Input
@@ -114,7 +114,7 @@ server <- function(input, output, session) {
   
   observeEvent(input$calcZinsButton, {
     
-    # Konstanten aus Inputs
+    # Konstanten aus Inputs (2. Unterseite)
     bb_2 <- input$bbInput2
     h_2 <- input$hypothekInput2
     b1_2 <- input$b1Input2
@@ -133,13 +133,13 @@ server <- function(input, output, session) {
     # Nebenkosten (CHF)
     nk_2 <- n_2 * bb_2
     
-    # max. kalk. Zins
+    # Max. kalk. Zins
     max_zins_2 <- ((maxt_2*e_2) - a_2 - nk_2) / h_2
     
     # Break Even Zins
     break_even_zins_2 <- (e_2 - a_2 - nk_2) / h_2
     
-    # Maximale kalkulatorischen Zinssatz als Output definieren
+    # Max. kalk. Zins & Break Even Zins als Output definieren
     output$maxZinsOutput <- renderTable({
       data.frame(max_kalk_zins = max_zins_2, break_even_zins = break_even_zins_2)
     }, digits = 4)
