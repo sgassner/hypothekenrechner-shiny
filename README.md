@@ -11,7 +11,7 @@ Diese Applikation bietet zwei Hauptfunktionen:
 
 ## Aufruf
 
-Das Tool ist online unter folgendem Link aufrufbar: [Link zum Hypothekarrechner]([http://example.com](https://sgassner.shinyapps.io/maxhypo/)
+Das Tool ist online unter folgendem Link aufrufbar: [Link zum Hypothekarrechner](https://sgassner.shinyapps.io/maxhypo/)
 
 ## UI-Beschreibung
 
