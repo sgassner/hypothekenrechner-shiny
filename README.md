@@ -2,6 +2,14 @@
 
 Eine interaktive Shiny Web-App zur Berechnung der maximalen Hypothek, des Break Even Zinssatzes und des Deckungsgrades.
 
+## Autor
+
+Sandro Gassner
+
+## Datum
+
+9. September 2023
+
 ## Übersicht
 
 Diese Applikation bietet zwei Hauptfunktionen:
